@@ -5,9 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "cd ../frontend && npm install && npm run build && mkdir -p ../backend/public && cp -r build/* ../backend/public/",
-    "build:win": "cd ..\\frontend && npm install && npm run build && xcopy build ..\\backend\\public /E /I /Y"
+    "dev": "nodemon server.js"
+    
   },
   "engines": {
     "node": ">=18.0.0"
