@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve frontend static files in production
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public','build')));
 
 const JWT_SECRET = process.env.JWT_SECRET || 'quiz-master-secret-key';
 
@@ -376,7 +376,7 @@ app.post('/api/battles/challenge', auth, (req, res) => {
 
 // Serve frontend for all non-API routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public','build' ,'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
