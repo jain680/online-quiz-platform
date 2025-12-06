@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: quizmaster
+    env: node
+    rootDir: backend
+    buildCommand: npm install && cd ../frontend && npm install && npm run build && mkdir -p ../backend/public && cp -r build/* ../backend/public/
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
